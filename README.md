@@ -9,11 +9,13 @@ The data is read in with the set of readin___.py
 The first steps of processing (1-4) scramble additional information on the single flights and save them to the datafram of the flights.
 This additional info is:
 
-- gps info (minimum distance, minimum distance time, overflight from)
-- aircraft information
-- weather during the flight
+1. gps info (minimum distance, minimum distance time, overflight from)
+2. aircraft information
+3. weather during the flight
+4. information on partector peaks
 
-Step 4 and 5 you can ignor, right?
+In processing 5 you can creat multiday files for faster loading
+
 
 Then you have the plotting scrips:
 
