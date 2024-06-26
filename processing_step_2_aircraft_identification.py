@@ -1,6 +1,7 @@
-import datetime
+# with this script you can read the information on aircrafts in params.aircrafttype_fp
+# then you can add this information to the flights and make a new flights_processed_file a new flights_pocessed file with a new version number
+
 import numpy as np
-import math
 import glob
 import os
 import pandas as pd
@@ -12,7 +13,6 @@ flightfiles = savedir + f"\\*processed*.csv"
 save_files = True
 
 for date in params.selected_dates:
-    files_processed = params.flightsprocessed_dir + f"\\*processed*.csv"
     filenames_flights_processed = np.array(glob.glob(flightfiles, recursive=True))
     filenames_flights_processed, last_version = params.get_file_date_and_last_version(filenames_flights_processed, [date])
 
@@ -26,6 +26,13 @@ for date in params.selected_dates:
             if not pd.isnull(info_on_aircraft.values).all():
                 for column, entry in info_on_aircraft.items():
                     flights.loc[index, column] = entry.values[0]
+            else:
+                for column, entry in info_on_aircraft.items():
+                    flights.loc[index, column] = 0
+        else:
+            for column, entry in info_on_aircraft.items():
+                flights.loc[index, column] = 0
+
 
     if save_files:
         savepath = os.path.join(savedir, f"{date.astype('datetime64[D]').astype(str)}_flights_processed_{last_version + 1}.csv")

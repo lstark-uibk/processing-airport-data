@@ -5,22 +5,18 @@
 
 # The program will check all tracks in params.flightsprocessed_dir and then get the information out of the track
 # Sometimes the track is unclear. Then it will plot a graph for a visual check which you will have to fill out
-# then all the info is saved in parentdir+"flights\\processed_flights\\Flightinfo_processed"
+# then all the info is saved in savedir with a new flights_pocessed file with a new version number
+
 import datetime
 import numpy as np
 import math
 import glob
 import os
-from pathlib import Path
-import pandas as pd
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib  import cm
-import matplotlib.dates as mdates
 from scipy.interpolate import splprep, splev
-from scipy.spatial import distance
 from scipy.optimize import minimize
-import re
 import pytz
 import params
 import readinflights

@@ -1,3 +1,6 @@
+# with this script you can read the weather information during an overflight
+# then you can add this information to the flights and make a new flights_processed_file a new flights_pocessed file with a new version number
+
 import numpy as np
 import glob
 import os

@@ -4,7 +4,7 @@ import pytz
 import glob
 import re
 
-parentdir = "D:\\Uniarbeit 23_11_09\\data\\Data_airport\\Data_airport"
+parentdir = "C:\\Users\\Umwelt\\Documents\\Data local\\Data_airport"
 # parentdir = "F:\\Uniarbeit 23_11_09\\data\\Data_airport\\Data_airport"
 flightsprocessed_dir =  os.path.join(parentdir, "analysis\\Processed_flights")
 # flightsprocessed_dir = "D:\\Uniarbeit 23_11_09\\data\\test\\flights_processed"
